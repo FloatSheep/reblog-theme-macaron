@@ -19,6 +19,6 @@ onMounted(() => {
   <div>
     <navigationBar />
     <banner />
-    <NuxtPage />
+    <nuxtPage />
   </div>
 </template>

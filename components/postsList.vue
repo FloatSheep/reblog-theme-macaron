@@ -1,11 +1,11 @@
 <script setup>
-import themeKit from "@reblog/themekit";
+import ThemeKit from "@reblog/themekit/dist/esm";
 import { ref } from "vue";
 
 const mainConfig = useAppConfig();
 const serverUrl = mainConfig.config.serverConfig.url;
 
-const themekit = new themeKit({
+const themekit = new ThemeKit({
   server: {
     url: serverUrl,
   },
@@ -24,7 +24,7 @@ themekit.getArticleList().then((data) => {
       class="body-posts-list md:max-w-96 sm:max-w-64 w-full flex flex-col"
     >
       <div
-        class="body-posts-item item-start bg-white max-w-full border border-solid border-black/20 hover:border-indigo-300 rounded-lg p-5 flex flex-col items-start my-2"
+        class="body-posts-item item-start md:max-w-96 md:min-w-max bg-white max-w-full border border-solid border-black/20 hover:border-indigo-300 rounded-lg p-5 flex flex-col items-start my-2"
         v-for="article in articles"
         :key="article.id"
       >
@@ -66,5 +66,8 @@ export default {
   .body-posts-list {
     margin-left: 23rem;
   }
+  .md\:max-w-96 {
+        max-width: 36rem;
+    }
 }
 </style>

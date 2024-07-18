@@ -1,11 +1,13 @@
 const mainConfig = {
   aside: {
-    avatar: "https://registry.npmmirror.com/@floatsheep/fsl-fim/1.0.9/files/avatar.webp",
+    avatar:
+      "https://registry.npmmirror.com/@floatsheep/fsl-fim/1.0.9/files/avatar.webp",
     description: "谁玩原神了😕",
     name: "浮杨烤全羊 🐏",
   },
   siteName: "Reblog Test",
   siteSubtitle: "浮云一别后，流水十年间。",
+  siteUrl: "",
   serverConfig: {
     url: "http://10.31.0.49:7830",
   },

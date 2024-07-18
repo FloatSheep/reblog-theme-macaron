@@ -22,6 +22,9 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
+/*   site: {
+    url: mainConfig.siteUrl,
+  }, */
   primevue: {
     autoImport: true,
     importTheme: { from: "@/themes/noir.js" },

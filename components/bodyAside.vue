@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue';
+import { ref } from "vue";
 
 const mainConfig = useAppConfig();
 const asideConfig = mainConfig.config.aside;
@@ -23,7 +23,7 @@ const updateCircleSize = (event) => {
   <div>
     <div class="body-aside max-w-52 w-full">
       <div
-        class="body-posts-item item-start bg-indigo-300 max-w-full border border-solid border-black/20 hover:border-indigo-300 rounded-lg p-5 flex flex-col items-start my-2"
+        class="body-posts-item item-start bg-indigo-300 max-w-full border border-solid hover:border-black/20 border-indigo-300 rounded-lg p-5 flex flex-col items-start my-2"
       >
         <div class="inline-block relative aside-avatar">
           <img
@@ -36,7 +36,11 @@ const updateCircleSize = (event) => {
             :style="circleStyle"
           ></span>
         </div>
-        <p class="text-center mt-4 text-lg text-cyan-950 font-semibold antialiased">{{ asideConfig.name }}</p>
+        <p
+          class="text-center mt-4 text-lg text-cyan-950 font-semibold antialiased"
+        >
+          {{ asideConfig.name }}
+        </p>
       </div>
     </div>
   </div>
@@ -45,7 +49,7 @@ const updateCircleSize = (event) => {
 <script>
 export default {
   name: "bodyAside",
-}
+};
 </script>
 
 <style scoped>
@@ -61,6 +65,7 @@ export default {
   display: flex;
   align-items: center; /* 垂直居中 */
   justify-content: center; /* 水平居中 */
+  transition: 0.2s;
 }
 
 .aside-avatar {
@@ -74,5 +79,4 @@ export default {
   bottom: 0;
   right: 0;
 }
-
 </style>
