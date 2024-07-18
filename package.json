@@ -1,0 +1,25 @@
+{
+  "name": "@floatsheep/macaron",
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@primevue/themes": "^4.0.0",
+    "@reblog/themekit": "^0.1.2",
+    "nuxt": "^3.12.3",
+    "primeicons": "^7.0.0",
+    "primevue": "^4.0.0",
+    "vue": "latest"
+  },
+  "devDependencies": {
+    "@primevue/nuxt-module": "^4.0.0",
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.39",
+    "tailwindcss": "^3.4.6"
+  }
+}
