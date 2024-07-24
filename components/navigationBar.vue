@@ -39,7 +39,7 @@ watch(
   }
 );
 
-let lastScrollTop = 0;
+const lastScrollTop = ref(0);
 
 const scrollFn = () => {
   window.addEventListener("scroll", () => {
@@ -50,6 +50,9 @@ const scrollFn = () => {
 
     if (window.scrollY === 0) {
       navbar.classList.add("bg-transparent");
+      navbar.classList.remove("bg-slate-100/50");
+      navbar.classList.remove("dark:bg-[#0D1117]/75");
+      navbar.classList.remove("backdrop-blur-sm");
     } else {
       navbar.classList.remove("bg-transparent");
       navbar.classList.add("bg-slate-100/50");
@@ -57,7 +60,7 @@ const scrollFn = () => {
       navbar.classList.add("backdrop-blur-sm");
     }
 
-    if (currentScrollTop < lastScrollTop || currentScrollTop === 0) {
+    if (currentScrollTop < lastScrollTop.value) {
       navbar.classList.remove("scrolling");
       navbar.classList.add("scroll-end");
       navTitle.classList.add("scroll-zero");
@@ -67,7 +70,7 @@ const scrollFn = () => {
       navTitle.classList.remove("scroll-zero");
     }
 
-    lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop;
+    lastScrollTop.value = currentScrollTop <= 0 ? 0 : currentScrollTop;
   });
 };
 
@@ -125,9 +128,12 @@ watch(
   () => route.path,
   async () => {
     await getSlug();
-    scrollFn();
+    window.removeEventListener("scroll", scrollFn);
   }
 );
+onBeforeUnmount(() => {
+  window.removeEventListener("scroll", scrollFn);
+});
 </script>
 
 <template>
