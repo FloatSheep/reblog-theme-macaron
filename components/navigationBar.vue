@@ -39,34 +39,35 @@ watch(
   }
 );
 
+let lastScrollTop = 0;
+
 const scrollFn = () => {
-  addEventListener("scroll", () => {
+  window.addEventListener("scroll", () => {
     const navbar = document.getElementById("navigation_bar");
     const navTitle = document.getElementById("nav-title");
-    const scrollTop = scrollY;
+    const currentScrollTop =
+      window.scrollY || document.documentElement.scrollTop;
 
-    if (scrollTop === 0) {
+    if (window.scrollY === 0) {
       navbar.classList.add("bg-transparent");
-      navbar.classList.remove("scrolling");
-      navbar.classList.add("scroll-end");
-      navTitle.classList.add("scroll-zero");
-      if (
-        navbar.classList.contains("bg-slate-100/50") &&
-        navbar.classList.contains("backdrop-blur-sm")
-      ) {
-        navbar.classList.remove("bg-slate-100/50");
-        navbar.classList.remove("backdrop-blur-sm");
-        navbar.classList.remove("dark:bg-[#0D1117]/75");
-      }
     } else {
       navbar.classList.remove("bg-transparent");
       navbar.classList.add("bg-slate-100/50");
       navbar.classList.add("dark:bg-[#0D1117]/75");
       navbar.classList.add("backdrop-blur-sm");
+    }
+
+    if (currentScrollTop < lastScrollTop || currentScrollTop === 0) {
+      navbar.classList.remove("scrolling");
+      navbar.classList.add("scroll-end");
+      navTitle.classList.add("scroll-zero");
+    } else {
       navbar.classList.add("scrolling");
-      navbar.classList.remove("scroll-end")
+      navbar.classList.remove("scroll-end");
       navTitle.classList.remove("scroll-zero");
     }
+
+    lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop;
   });
 };
 
