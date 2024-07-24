@@ -1,3 +1,4 @@
+<!-- eslint-disable no-undef -->
 <script setup>
 import { ref } from "vue";
 
@@ -21,9 +22,9 @@ const updateCircleSize = (event) => {
 
 <template>
   <div>
-    <div class="body-aside max-w-52 w-full">
+    <div class="body-aside max-w-52 w-full flex">
       <div
-        class="body-posts-item item-start bg-indigo-300 max-w-full border border-solid hover:border-black/20 border-indigo-300 rounded-lg p-5 flex flex-col items-start my-2"
+        class="body-posts-item item-start bg-[#425AEF] max-w-full border border-solid hover:border-black/20 border-indigo-300 rounded-lg p-5 flex flex-col items-start my-2"
       >
         <div class="inline-block relative aside-avatar">
           <img
@@ -37,7 +38,7 @@ const updateCircleSize = (event) => {
           ></span>
         </div>
         <p
-          class="text-center mt-4 text-lg text-cyan-950 font-semibold antialiased"
+          class="text-center mt-4 text-lg text-white font-semibold antialiased"
         >
           {{ asideConfig.name }}
         </p>
@@ -63,8 +64,8 @@ export default {
 } */
 .body-posts-item {
   display: flex;
-  align-items: center; /* 垂直居中 */
-  justify-content: center; /* 水平居中 */
+  align-items: center;
+  justify-content: center;
   transition: 0.2s;
 }
 

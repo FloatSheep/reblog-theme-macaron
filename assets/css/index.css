@@ -3,6 +3,11 @@
 @tailwind utilities;
 
 html {
-  background-color: var(--macaron-backgroundColor);
-  background-image: var(--macaron-backgroundImage);
+  background-color: var(--macaron-light-backgroundColor);
+  background-image: var(--macaron-light-backgroundImage);
+}
+
+html.app-dark {
+  background-color: var(--macaron-dark-backgroundColor);
+  background-image: var(--macaron-dark-backgroundImage);
 }

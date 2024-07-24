@@ -1,3 +1,4 @@
+<!-- eslint-disable no-undef -->
 <script setup>
 import ThemeKit from "@reblog/themekit/dist/esm";
 import { ref } from "vue";
@@ -24,7 +25,7 @@ themekit.getArticleList().then((data) => {
       class="body-posts-list md:max-w-96 sm:max-w-64 w-full flex flex-col"
     >
       <div
-        class="body-posts-item item-start md:max-w-96 md:min-w-max bg-white max-w-full border border-solid border-black/20 hover:border-indigo-300 rounded-lg p-5 flex flex-col items-start my-2"
+        class="body-posts-item item-start md:max-w-96 md:min-w-max bg-white dark:bg-gray-950/60 dark:backdrop-blur-sm max-w-full border border-solid border-black/20 hover:border-indigo-300 rounded-lg p-5 flex flex-col items-start my-2 dark:text-white light:text-black"
         v-for="article in articles"
         :key="article.id"
       >
@@ -34,7 +35,7 @@ themekit.getArticleList().then((data) => {
           class="flex flex-col content-start items-start"
         >
           <p id="posts-title" class="text-lg font-medium antialiased">{{ article.title }}</p>
-          <p id="posts-desc" class="text-gray-950/75 antialiased">{{ article.desc }}</p>
+          <p id="posts-desc" class="antialiased dark:text-white text-gray-950/75">{{ article.desc }}</p>
         </router-link>
       </div>
     </div>
@@ -53,6 +54,7 @@ export default {
 <style scoped>
 .body-posts-item {
   transition: 0.2s;
+  padding: 1.6rem 2rem;
 }
 .body-posts-list {
   display: -webkit-box;
@@ -64,7 +66,7 @@ export default {
 }
 @media (min-width: 768px) {
   .body-posts-list {
-    margin-left: 23rem;
+    margin-left: 23vw;
   }
   .md\:max-w-96 {
         max-width: 36rem;

@@ -1,8 +1,6 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
   <div>
-    <div class="mt-40">
-      <PostsList />
-    </div>
+    <p>🤤 这里还什么都没写</p>
   </div>
 </template>

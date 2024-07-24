@@ -10,7 +10,7 @@ export default defineNuxtConfig({
     },
   },
   build: {
-    transpile: ["primevue"],
+    transpile: ["primevue", "marked"],
   },
   compatibilityDate: "2024-04-03",
   css: ['@/assets/css/index.css'],

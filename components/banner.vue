@@ -1,3 +1,4 @@
+<!-- eslint-disable no-undef -->
 <script setup>
 import { ref } from "vue";
 import { useRoute } from "vue-router";
@@ -30,11 +31,15 @@ watch(
     await getSlug();
   }
 );
+
+onMounted(async () => {
+  await getSlug();
+});
 </script>
 
 <template>
   <div id="banner" class="mt-20">
-    <h1 class="md:text-4xl font-bold">
+    <h1 class="md:text-4xl font-bold dark:text-white light:text-black">
       <template v-if="postTitle">
         {{ postTitle }}
       </template>
@@ -42,7 +47,10 @@ watch(
         你好，欢迎来到 {{ siteConfig.config.siteName }}
       </template>
     </h1>
-    <p id="banner-subtitle" class="md:text-2xl font-normal mt-7">
+    <p
+      id="banner-subtitle"
+      class="md:text-2xl font-normal mt-7 dark:text-white light:text-black"
+    >
       {{ siteConfig.config.siteSubtitle }}
     </p>
   </div>
@@ -50,6 +58,7 @@ watch(
 
 <script>
 export default {
+  // eslint-disable-next-line vue/multi-word-component-names
   name: "banner",
 };
 </script>
